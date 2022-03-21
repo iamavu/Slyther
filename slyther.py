@@ -8,7 +8,7 @@ from colorama import Fore, Back, Style
 from modules import audit
 
 def banner():
-    print(Fore.CYAN + f"""
+    print(Fore.MAGENTA + f"""
   ______   __            _   __                      
 .' ____ \ [  |          / |_[  |                     
 | (___ \_| | |   _   __`| |-'| |--.  .---.  _ .--.   
