@@ -4,6 +4,11 @@
 
 > Slyther is AWS Security tool to check read/write/delete access for S3 buckets
 
+## Requirements 
+```sh
+aws-cli
+```
+
 ## Installation
 
 ```sh
