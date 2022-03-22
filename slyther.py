@@ -25,7 +25,7 @@ def banner():
     
 
 def slyther():    
-    audit.audit()
+    audit.audit.main()
 
 if __name__ == '__main__':
     try:
