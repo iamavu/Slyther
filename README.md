@@ -23,6 +23,9 @@ python3 slyther.py -b flaws.cloud
 
 ## Release History
 
+* 0.0.2
+  * Added option to check list of buckets
+
 * 0.0.1
   * Initial release
 
