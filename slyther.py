@@ -6,6 +6,7 @@ init()
 from colorama import Fore, Back, Style
 
 from modules import audit
+from modules import check
 
 def banner():
     print(Fore.MAGENTA + Style.BRIGHT + f"""
@@ -24,8 +25,15 @@ def banner():
     print(Style.RESET_ALL)
     
 
-def slyther():    
-    audit.audit.main()
+def slyther():
+    banner()
+    isAWS = check.check_aws()
+    if isAWS:
+        audit.audit.main()
+    else:
+        print(Fore.RED + '[!] aws-cli is not installed!')
+        exit()   
+    
 
 if __name__ == '__main__':
     try:

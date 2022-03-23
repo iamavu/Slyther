@@ -23,6 +23,9 @@ python3 slyther.py -b flaws.cloud
 
 ## Release History
 
+* 0.0.3
+  * Added option to check if aws-cli is installed or not
+
 * 0.0.2
   * Added option to check list of buckets
 

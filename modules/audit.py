@@ -75,6 +75,6 @@ class audit:
 
 
 if __name__ == '__main__':
-    audit.main()
+    pass
 
             
