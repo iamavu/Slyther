@@ -40,7 +40,7 @@ class audit:
         print(Fore.YELLOW + f'\n[*] Checking write access of bucket "{bucket}"...')
         cwd = os.getcwd()
         try:
-            output = subprocess.check_output(f'aws --region {region} s3 cp {cwd}/1337.txt s3://{bucket}/1337.txt', shell=True, stderr=subprocess.STDOUT)
+            output = subprocess.check_output(f'aws --region {region} s3 cp {cwd}/1337.txt s3://{bucket}/1337.txt --no-sign-request', shell=True, stderr=subprocess.STDOUT)
             output = output.decode('utf-8')
             if 'upload' in output:
                 print(Fore.GREEN + f'\n[+] Contents can be written to bucket "{bucket}"')
@@ -49,7 +49,7 @@ class audit:
         
         print(Fore.YELLOW + f'\n[*] Checking delete access of bucket "{bucket}"...')
         try:
-            output = subprocess.check_output(f'aws --region {region} s3 rm s3://{bucket}/1337.txt', shell=True, stderr=subprocess.STDOUT)
+            output = subprocess.check_output(f'aws --region {region} s3 rm s3://{bucket}/1337.txt --no-sign-request', shell=True, stderr=subprocess.STDOUT)
             output = output.decode('utf-8')
             if 'upload' in output:
                 print(Fore.GREEN + f'\n[+] Contents on {bucket} can be deleted!')
