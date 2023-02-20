@@ -51,7 +51,7 @@ class audit:
         try:
             output = subprocess.check_output(f'aws --region {region} s3 rm s3://{bucket}/1337.txt --no-sign-request', shell=True, stderr=subprocess.STDOUT)
             output = output.decode('utf-8')
-            if 'upload' in output:
+            if 'delete' in output:
                 print(Fore.GREEN + f'\n[+] Contents on {bucket} can be deleted!')
         except subprocess.CalledProcessError:
             print(Fore.RED + f'\n[-] Bucket "{bucket}" doesn\'t have public access to delete contents!')
